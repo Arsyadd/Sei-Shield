@@ -45,6 +45,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
     --purple-glow: 258 70% 50%; /* Medium vibrant purple for glow */
     --purple-glow-light: 258 70% 70%; /* Lighter vibrant purple for glow */
+
+    /* Gradient colors for text-white-purple-gradient in light mode (ungu dan hitam) */
+    --gradient-white-purple-start: var(--purple-glow);
+    --gradient-white-purple-end: var(--foreground);
   }
 
   .dark {
@@ -82,6 +86,10 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
     --purple-glow: 258 70% 70%; /* Lighter vibrant purple for glow */
     --purple-glow-light: 258 70% 50%; /* Medium vibrant purple for glow */
+
+    /* Gradient colors for text-white-purple-gradient in dark mode (putih dan ungu) */
+    --gradient-white-purple-start: var(--foreground);
+    --gradient-white-purple-end: var(--purple-glow);
   }
 }
 
@@ -122,9 +130,16 @@
     hsl(var(--purple-glow) / 0.2);
 }
 
-/* White to purple gradient for main headings */
+/* Dynamic gradient for main headings */
 .text-white-purple-gradient {
-  @apply bg-gradient-to-r from-gray-800 via-purple-200 to-purple-400 bg-clip-text text-transparent; /* Changed from-white to from-gray-800 */
+  background: linear-gradient(
+    to right,
+    hsl(var(--gradient-white-purple-start)) 0%,
+    hsl(var(--gradient-white-purple-end)) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .text-purple-white-gradient {

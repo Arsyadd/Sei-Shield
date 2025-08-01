@@ -63,7 +63,7 @@ export function Navbar() {
               <span className="sr-only">Toggle theme</span>
             </Button>
             <Link href="/app">
-              <Button size="sm" className="rounded-full btn-purple-glow border-0 text-sm lg:text-base">
+              <Button className="rounded-full btn-purple-glow border-0 h-10 px-5 text-base md:h-11 md:px-6 md:text-lg">
                 Launch App
                 <ChevronRight className="ml-1 size-4 lg:size-5" />
               </Button>

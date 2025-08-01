@@ -1,93 +1,99 @@
-"use client"
-
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
+import { Github, Twitter, MessageCircle, Mail } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export function Footer() {
   return (
-    <footer className="w-full py-8 md:py-12 lg:py-16 border-t bg-muted/30">
-      <div className="container grid gap-6 md:gap-8 px-4 md:px-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        <div className="flex flex-col items-start gap-3 md:gap-4 sm:col-span-2 md:col-span-1 lg:col-span-2">
-          <div className="flex items-center gap-2 font-bold">
-            <div className="size-6 md:size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-xs md:text-sm">
-              SS
+    <footer className="w-full py-12 md:py-16 lg:py-20 bg-muted/30 text-muted-foreground">
+      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="space-y-4">
+          <Link className="flex items-center gap-2 font-bold" href="#">
+            <div className="size-8 rounded bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
+              S
             </div>
-            <span className="text-white text-sm md:text-base">SeiShield</span>
-          </div>
-          <p className="text-xs md:text-sm text-muted-foreground">
-            Your autonomous SEI meme coin guardian. Analyze, track, and stay ahead.
+            <span className="text-foreground">SeiShield</span>
+          </Link>
+          <p className="text-sm">
+            Your autonomous SEI meme coin guardian. Protect your investments with AI-powered analysis and real-time
+            monitoring.
           </p>
-          <div className="flex gap-3 md:gap-4">
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <Facebook className="size-4 md:size-5" />
-              <span className="sr-only">Facebook</span>
+          <div className="flex space-x-4">
+            <Link href="#" className="hover:text-foreground transition-colors">
+              <Twitter className="size-5" />
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <Twitter className="size-4 md:size-5" />
-              <span className="sr-only">Twitter</span>
+            <Link href="#" className="hover:text-foreground transition-colors">
+              <Github className="size-5" />
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <Instagram className="size-4 md:size-5" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <Linkedin className="size-4 md:size-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-              <Github className="size-4 md:size-5" />
-              <span className="sr-only">GitHub</span>
+            <Link href="#" className="hover:text-foreground transition-colors">
+              <MessageCircle className="size-5" />
             </Link>
           </div>
         </div>
-        <nav className="grid gap-1 md:gap-2 text-xs md:text-sm">
-          <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">Product</h3>
-          <Link href="/benefit" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Benefits
-          </Link>
-          <Link href="/roadmap" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Roadmap
-          </Link>
-          <Link href="/security" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Security
-          </Link>
-          <Link href="/faq" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            FAQ
-          </Link>
-          <Link href="/docs" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Docs
-          </Link>
-        </nav>
-        <nav className="grid gap-1 md:gap-2 text-xs md:text-sm">
-          <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">Company</h3>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            About Us
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Careers
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Press
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Contact
-          </Link>
-        </nav>
-        <nav className="grid gap-1 md:gap-2 text-xs md:text-sm">
-          <h3 className="font-semibold text-foreground mb-1 md:mb-2 text-sm md:text-base">Legal</h3>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Privacy Policy
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Terms of Service
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-            Disclaimer
-          </Link>
-        </nav>
+
+        <div className="space-y-4">
+          <h4 className="font-semibold text-foreground">Product</h4>
+          <nav className="flex flex-col space-y-2 text-sm">
+            <Link href="/app" className="hover:text-foreground transition-colors">
+              Launch App
+            </Link>
+            <Link href="/benefit" className="hover:text-foreground transition-colors">
+              Benefits
+            </Link>
+            <Link href="/security" className="hover:text-foreground transition-colors">
+              Security
+            </Link>
+            <Link href="/roadmap" className="hover:text-foreground transition-colors">
+              Roadmap
+            </Link>
+          </nav>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="font-semibold text-foreground">Resources</h4>
+          <nav className="flex flex-col space-y-2 text-sm">
+            <Link href="/docs" className="hover:text-foreground transition-colors">
+              Documentation
+            </Link>
+            <Link href="/faq" className="hover:text-foreground transition-colors">
+              FAQ
+            </Link>
+            <Link href="#" className="hover:text-foreground transition-colors">
+              API Reference
+            </Link>
+            <Link href="#" className="hover:text-foreground transition-colors">
+              Community
+            </Link>
+          </nav>
+        </div>
+
+        <div className="space-y-4">
+          <h4 className="font-semibold text-foreground">Stay Updated</h4>
+          <p className="text-sm">Get the latest updates on new features and security improvements.</p>
+          <div className="flex space-x-2">
+            <Input type="email" placeholder="Enter your email" className="flex-1" />
+            <Button size="sm" className="px-3">
+              <Mail className="size-4" />
+            </Button>
+          </div>
+        </div>
       </div>
-      <div className="container mt-6 md:mt-8 text-center text-xs text-muted-foreground">
-        © 2025 SeiShield. All rights reserved.
+
+      <div className="container mt-8 pt-8 border-t border-border/40">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p>© 2025 SeiShield. All rights reserved.</p>
+          <div className="flex space-x-6">
+            <Link href="#" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="#" className="hover:text-foreground transition-colors">
+              Cookie Policy
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   )
